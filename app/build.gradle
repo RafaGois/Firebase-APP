@@ -45,4 +45,6 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:30.4.1')
     //colocar aq as futuras adicoes
     implementation 'com.google.firebase:firebase-database'
+    //auth do firebase
+    implementation 'com.google.firebase:firebase-auth'
 }
