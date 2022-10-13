@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         auth.signOut();
 
-        /*
+/*
         DatabaseReference usuarios = reference.child("usuarios");
 
         usuarios.addValueEventListener(new ValueEventListener() {
@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        usuarios.child("002").setValue(usuario);
-         */
+        usuarios.push().setValue(usuario);
+*/
     }
 
     public void logar (View view) {
