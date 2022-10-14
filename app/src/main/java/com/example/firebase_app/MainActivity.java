@@ -95,12 +95,18 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(MainActivity.this, "Usuario logado", Toast.LENGTH_SHORT).show();
+                        navega();
                     } else {
                         Toast.makeText(MainActivity.this, "Erro ao tentar logar", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
+    }
+
+    private void navega () {
+        Intent intent = new Intent(this,Imagens.class);
+        startActivity(intent);
     }
 
     public void registrar (View view) {
