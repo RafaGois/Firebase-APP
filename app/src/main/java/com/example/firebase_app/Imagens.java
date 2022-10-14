@@ -31,7 +31,7 @@ public class Imagens extends AppCompatActivity {
 
         deletarImagem();
 
-
+        baixarImagem();
     }
 
     public void clicouImagem (View view) {
@@ -118,8 +118,13 @@ public class Imagens extends AppCompatActivity {
 
         ImageView imagemRecebedora = findViewById(R.id.imagemRecebedora);
 
-        Glide.with(Imagens.this)
-                .load(imagemRef )
-                .into(imagemRecebedora);
+        imagemRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+
+                Glide.with(Imagens.this).load(uri).into(imagemRecebedora);
+                Toast.makeText(Imagens.this,"Sucesso ao buscar do server.", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
